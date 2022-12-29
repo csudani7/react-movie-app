@@ -2,29 +2,40 @@ import styled from "styled-components";
 import { theme } from "../../../Theme/theme";
 
 export const MainSearchbar = styled.div<{
-  barOpened: boolean;
+  isSearchBarOpen: boolean;
+  isMobileDevice: boolean;
 }>`
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: ${({ barOpened }) =>
-    barOpened ? theme.colors.primary100 : "transparent"};
-  width: ${({ barOpened }) => (barOpened ? "567px" : "0px")};
+  justify-content: flex-start;
+  background-color: ${({ isSearchBarOpen }) =>
+    isSearchBarOpen ? theme.colors.primary100 : "transparent"};
+  width: ${({ isSearchBarOpen, isMobileDevice }) =>
+    isSearchBarOpen && !isMobileDevice
+      ? "567px"
+      : isSearchBarOpen && isMobileDevice
+      ? "200px"
+      : "0px"};
   cursor: pointer;
-  padding: 0px 20px;
-  height: 55px;
+  padding: ${({ isMobileDevice }) =>
+    isMobileDevice ? "0px 10px" : "0px 20px"};
+  height: 44px;
   border-radius: 8px;
   transition: width 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  @media (min-width: 640px) {
+    height: 55px;
+  }
 `;
 
 export const Input = styled.input<{
-  barOpened: boolean;
+  isSearchBarOpen: boolean;
 }>`
-  font-size: 21px;
+  font-size: 11px;
   line-height: 1;
   background-color: transparent;
   width: 100%;
-  margin-left: ${({ barOpened }) => (barOpened ? "1rem" : "0rem")};
+  margin-left: ${({ isSearchBarOpen }) => (isSearchBarOpen ? "1rem" : "0rem")};
   border: none;
   color: white;
   transition: margin 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -36,10 +47,14 @@ export const Input = styled.input<{
   &::placeholder {
     color: ${theme.colors.gray100};
   }
+
+  @media (min-width: 640px) {
+    font-size: 21px;
+  }
 `;
 
 export const SearchIconContainer = styled.div<{
-  barOpened: boolean;
+  isSearchBarOpen: boolean;
 }>`
   line-height: 1;
   cursor: pointer;

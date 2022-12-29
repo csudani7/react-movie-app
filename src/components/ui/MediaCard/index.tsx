@@ -17,8 +17,6 @@ const MediaCard: React.FunctionComponent<IMediaCard.IProps> = ({
   fontColor,
   title,
 }) => {
-  console.log(width, "width");
-  console.log(bgColor, "bgColor");
 
   return (
     <BaseCard width={width} height={height} bgColor={bgColor}>

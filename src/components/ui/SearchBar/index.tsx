@@ -7,39 +7,36 @@ import {
   MainSearchbar,
   SearchIconContainer,
 } from "./SearchbarStyle";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const SearchBar = () => {
   const [searchedValue, setSearchedValue] = React.useState("");
-  const [barOpened, setBarOpened] = React.useState(false);
-  console.log(barOpened, "barOpened");
+  const [isSearchBarOpen, setIsSearchBarOpen] = React.useState(false);
+  const muiTheme = useTheme();
+  const isMobileDevice = useMediaQuery(muiTheme.breakpoints.down("sm"));
 
   return (
-    <MainSearchbar barOpened={barOpened}>
+    <MainSearchbar isSearchBarOpen={isSearchBarOpen} isMobileDevice={isMobileDevice}>
       <SearchIconContainer
-        barOpened={barOpened}
+        isSearchBarOpen={isSearchBarOpen}
         onClick={() => {
-          setBarOpened(true);
+          setIsSearchBarOpen(!isSearchBarOpen);
         }}
       >
-        <SearchIcon
-          fillColor={theme.colors.gray100}
-          width="23"
-          height="23"
-        />
+        <SearchIcon fillColor={theme.colors.gray100} width="23" height="23" />
       </SearchIconContainer>
 
-      {barOpened && (
+      {isSearchBarOpen && (
         <>
           <Input
             onChange={(e) => setSearchedValue(e.target.value)}
             value={searchedValue}
-            barOpened={barOpened}
+            isSearchBarOpen={isSearchBarOpen}
             placeholder="Title, Movies, Keyword"
           />
           <CloseContainer
             searcedhValue={searchedValue}
             onClick={() => {
-              setBarOpened(false);
               setSearchedValue("");
             }}
           >
