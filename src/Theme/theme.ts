@@ -3,6 +3,7 @@ import { GlobalTheme } from "./styled";
 export const globalColors: GlobalTheme.Colors = {
   //Dark Blue
   primary: "#1F2A3C",
+  primary100: "#1A2536",
 
   //Light Blue
   secondary: "#394B61",
@@ -11,6 +12,7 @@ export const globalColors: GlobalTheme.Colors = {
   white100: "#ffffff",
   aquaBlue: "#00E0FF",
   gray100: "#D4D7DD",
+  
 };
 
 export const globalEffects: GlobalTheme.Effects = {

@@ -11,6 +11,7 @@ declare module GlobalTheme {
 
   export interface Colors {
     primary: string;
+    primary100: string;
     secondary: string;
     white100: string;
     aquaBlue: string;

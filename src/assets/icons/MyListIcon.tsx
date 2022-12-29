@@ -11,8 +11,7 @@ const MyListIcon = ({ width, height, fillColor }: IIcons.IconProps) => {
     >
       <path
         d="M0 6H2V4H0V6ZM0 10H2V8H0V10ZM0 2H2V0H0V2ZM4 6H18V4H4V6ZM4 10H18V8H4V10ZM4 0V2H18V0H4ZM0 6H2V4H0V6ZM0 10H2V8H0V10ZM0 2H2V0H0V2ZM4 6H18V4H4V6ZM4 10H18V8H4V10ZM4 0V2H18V0H4Z"
-        fill="#D4D7DD"
-        className={fillColor}
+        fill={fillColor || "#D4D7DD"}
       />
     </svg>
   );
