@@ -1,3 +1,15 @@
+import {
+  HeartIcon,
+  LogoutIcon,
+  MovieIcon,
+  MyListIcon,
+  PlayListIcon,
+  SearchIcon,
+  SettingsIcon,
+  TvShowsIcon,
+  WatchLaterIcon,
+} from "../assets/icons";
+
 export const moviesData = [
   {
     Title: "Avatar",
@@ -492,5 +504,53 @@ export const moviesData = [
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMjA3MTQ5Ml5BMl5BanBnXkFtZTgwOTA1NDU4OTE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMyNjg5ODYwNF5BMl5BanBnXkFtZTgwMTE1NDU4OTE@._V1_SY1000_CR0,0,1477,1000_AL_.jpg",
     ],
+  },
+];
+
+export const sidebarMenuList = [
+  {
+    name: "Discover",
+    link: "/",
+    icon: SearchIcon,
+  },
+  {
+    name: "Playlist",
+    link: "/playlist",
+    icon: PlayListIcon,
+  },
+  {
+    name: "Movie",
+    link: "/movie",
+    icon: MovieIcon,
+  },
+  {
+    name: "TV Shows",
+    link: "/tv-shows",
+    icon: TvShowsIcon,
+  },
+  {
+    name: "My List",
+    link: "/my-list",
+    icon: MyListIcon,
+  },
+  {
+    name: "Watch Later",
+    link: "/watch-later",
+    icon: WatchLaterIcon,
+  },
+  {
+    name: "Recommended",
+    link: "/recommended",
+    icon: HeartIcon,
+  },
+  {
+    name: "Settings",
+    link: "/settings",
+    icon: SettingsIcon,
+  },
+  {
+    name: "Logout",
+    link: "/logout",
+    icon: LogoutIcon,
   },
 ];

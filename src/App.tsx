@@ -1,10 +1,18 @@
 import React from "react";
+import { Route, Routes } from "react-router";
+import { BrowserRouter as Router } from "react-router-dom";
+import PrivateRoute from "./hoc/PrivateRoute";
+import { Home } from "./pages";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">UI is coming soon</header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<PrivateRoute />}>
+          <Route path="/" element={<Home />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

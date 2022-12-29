@@ -6,6 +6,8 @@ export const globalColors: GlobalTheme.Colors = {
 
   //Light Blue
   secondary: "#394B61",
+
+  background: "#273244",
   white100: "#ffffff",
   aquaBlue: "#00E0FF",
   gray100: "#D4D7DD",
