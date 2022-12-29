@@ -15,12 +15,12 @@ export const globalEffects: GlobalTheme.Effects = {
   boxShadow: `0px 1px 2px rgba(21, 21, 21, 0.02), 0px 4px 8px rgba(21, 21, 21, 0.08)`,
 };
 
-export const globalText: GlobalTheme.Text = {
+export const globalTypography: GlobalTheme.Typography = {
   openSansFont: "Open Sans, sans-serif",
 };
 
 export const theme: GlobalTheme.DefaultTheme = {
   colors: globalColors,
   effects: globalEffects,
-  text: globalText,
+  typography: globalTypography,
 };

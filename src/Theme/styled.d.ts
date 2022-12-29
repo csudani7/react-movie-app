@@ -6,7 +6,7 @@ declare module GlobalTheme {
   export interface DefaultTheme {
     colors: Colors;
     effects: Effects;
-    text: Text;
+    typography: Typography;
   }
 
   export interface Colors {
@@ -21,7 +21,7 @@ declare module GlobalTheme {
     boxShadow: string;
   }
 
-  export interface Text {
+  export interface Typography {
     openSansFont: string;
   }
 }
