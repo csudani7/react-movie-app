@@ -17,7 +17,6 @@ const MediaCard: React.FunctionComponent<IMediaCard.IProps> = ({
   fontColor,
   title,
 }) => {
-
   return (
     <BaseCard width={width} height={height} bgColor={bgColor}>
       <ImgCard>
@@ -30,9 +29,7 @@ const MediaCard: React.FunctionComponent<IMediaCard.IProps> = ({
         />
       </ImgCard>
 
-      <Title>
-        <Typography fontStyle={{ color: fontColor }}>{title}</Typography>
-      </Title>
+      <Title fontColor={fontColor}>{title}</Title>
 
       <Actions>
         <PlayIcon />
@@ -55,22 +52,29 @@ export const BaseCard = styled.div<{
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   border-radius: 11px;
+  padding: 10px 10px 15px 10px;
+  justify-content: space-between;
 `;
 
 const ImgCard = styled.div`
-  margin: 10px 11px 10px;
   border-radius: 6px;
   overflow: hidden;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 `;
 
-const Title = styled.div`
-  display: flex;
-  justify-content: start;
-  margin-left: 10px;
-  margin-bottom: 12px;
+const Title = styled.div<{
+  fontColor: string;
+}>`
+  display: block;
+  padding-bottom: 12px;
   font-family: ${theme.typography.openSansFont};
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: ${({ fontColor }) => fontColor};
 `;
 
 const Actions = styled.div`
