@@ -10,17 +10,26 @@ export const verticalSlider = keyframes`
 }
 `;
 
+export const opacityAnimation = keyframes`
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+`;
+
 export const CardDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
   height: auto;
   background-color: ${theme.colors.secondary};
   border-radius: 11px;
   overflow: hidden;
   width: 100%;
-  animation: ${verticalSlider} 2s ease-in-out;
+  animation: ${verticalSlider} 500ms ease-in-out;
+  animation-fill-mode: both;
 
   @media (min-width: 640px) {
     flex-direction: row;
@@ -33,6 +42,9 @@ export const ImageContainer = styled.div<{
   height: string;
 }>`
   width: 100%;
+  animation: ${opacityAnimation} 500ms ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: 500ms;
 
   img {
     width: 100%;
@@ -53,6 +65,9 @@ export const DetailsWrapper = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 34px 15px 25px 15px;
+  animation: ${opacityAnimation} 500ms ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: 500ms;
 
   @media (min-width: 640px) {
     padding: 34px 42px 25px 42px;
