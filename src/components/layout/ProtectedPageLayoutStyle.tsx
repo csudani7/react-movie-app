@@ -16,7 +16,7 @@ export const MainSection = styled.div<{
   padding: ${({ isShowSidebar, isMobileDevice }) =>
     isShowSidebar && !isMobileDevice
       ? "0px 50px 0px 325px"
-      : "0px 20px 0px 110px"};
+      : "0px 20px 0px 90px"};
   transition-duration: 500ms;
   background: ${theme.colors.background};
 `;
