@@ -73,6 +73,7 @@ export const HomeMainContainer = styled.div<{
 const NoResultTextWrappr = styled.div`
   font-family: ${theme.typography.openSansFont};
   color: ${theme.colors.white100};
+  
 `;
 
 export default Home;
