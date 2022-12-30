@@ -68,6 +68,7 @@ export const DetailsWrapper = styled.div`
   animation: ${opacityAnimation} 500ms ease-in-out;
   animation-fill-mode: both;
   animation-delay: 500ms;
+  width: 100%;
 
   @media (min-width: 640px) {
     padding: 34px 42px 25px 42px;

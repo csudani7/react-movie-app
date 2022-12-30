@@ -17,6 +17,7 @@ export const MainContainer = styled.div<{
   left: 0;
   padding-bottom: 20px;
   transition-duration: 500ms;
+  z-index: 1;
 
   @media (min-width: 640px) {
     display: ${({ isHideOnMobile, isShowSidebar }) =>
