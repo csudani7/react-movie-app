@@ -26,40 +26,53 @@ const Home = () => {
   }, [searchedValue]);
 
   return (
-    <HomeMainContainer>
-      {movieList?.map((data: any) => (
-        <>
-          {data?.Title === showSelectedMovieDetails && (
-            <MediaDetailsCard
-              movieData={data}
-              buttonText={["Play Movie", "Watch Trailer"]}
-              imageWidth="334px"
-              imageHeight="389px"
+    <HomeMainContainer length={movieList.length}>
+      {movieList.length === 0 ? (
+        <NoResultTextWrappr>
+          No results found for your search.
+        </NoResultTextWrappr>
+      ) : (
+        movieList?.map((data: any) => (
+          <>
+            {data?.Title === showSelectedMovieDetails && (
+              <MediaDetailsCard
+                movieData={data}
+                buttonText={["Play Movie", "Watch Trailer"]}
+                imageWidth="334px"
+                imageHeight="389px"
+              />
+            )}
+            <MediaCard
+              image={data?.Poster}
+              width="158px"
+              bgColor={theme.colors.secondary}
+              fontColor={theme.colors.gray100}
+              height="278px"
+              imgHeight="190px"
+              imgWidth="157px"
+              title={data?.Title}
+              onClickHandler={(title) => setShowSelectedMovieDetails(title)}
             />
-          )}
-          <MediaCard
-            image={data?.Poster}
-            width="158px"
-            bgColor={theme.colors.secondary}
-            fontColor={theme.colors.gray100}
-            height="278px"
-            imgHeight="190px"
-            imgWidth="157px"
-            title={data?.Title}
-            onClickHandler={(title) => setShowSelectedMovieDetails(title)}
-          />
-        </>
-      ))}
+          </>
+        ))
+      )}
     </HomeMainContainer>
   );
 };
 
-export const HomeMainContainer = styled.div`
+export const HomeMainContainer = styled.div<{
+  length: number;
+}>`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: ${({ length }) => (length > 0 ? "center" : "flex-start")};
   gap: 26px;
   width: 100%;
+`;
+
+const NoResultTextWrappr = styled.div`
+  font-family: ${theme.typography.openSansFont};
+  color: ${theme.colors.white100};
 `;
 
 export default Home;
