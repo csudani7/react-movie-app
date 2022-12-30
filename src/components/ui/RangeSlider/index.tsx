@@ -10,10 +10,17 @@ const RangeSlider: React.FC<IRangeSliderProps.IProps> = ({
   bgColor,
   height,
 }) => {
+  const [sliderValue, setSliderValue] = React.useState(0);
+  React.useEffect(() => {
+    setTimeout(() => {
+      setSliderValue(value);
+    }, 500);
+  }, []);
+
   return (
     <RangeSlideContainer>
       <Slider
-        value={value}
+        value={sliderValue}
         sx={{
           width: width,
           color: bgColor,
@@ -37,5 +44,9 @@ export const RangeSlideContainer = styled.div`
 
   .MuiSlider-rail {
     background-color: ${theme.colors.black100};
+  }
+
+  .MuiSlider-track {
+    transition: width 500ms ease-in;
   }
 `;
