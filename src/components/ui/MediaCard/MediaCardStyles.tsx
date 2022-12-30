@@ -9,11 +9,15 @@ export const BaseCard = styled.div<{
   display: flex;
   flex-direction: column;
   background: ${({ bgColor }) => `${bgColor} !important`};
-  width: ${({ width }) => width};
+  width: 100%;
   max-height: ${({ height }) => height};
   border-radius: 11px;
   padding: 10px 10px 15px 10px;
   justify-content: space-between;
+
+  @media (min-width: 640px) {
+    width: ${({ width }) => width};
+  }
 `;
 
 export const ImgCard = styled.div`
@@ -22,6 +26,10 @@ export const ImgCard = styled.div`
   display: flex;
   justify-content: center;
   cursor: pointer;
+
+  img {
+    object-fit: fill;
+  }
 `;
 
 export const Title = styled.div<{
