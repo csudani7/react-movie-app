@@ -8,15 +8,20 @@ import {
   SearchIconContainer,
 } from "./SearchbarStyle";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { searchedValueContext } from "../../layout";
 
 const SearchBar = () => {
-  const [searchedValue, setSearchedValue] = React.useState("");
   const [isSearchBarOpen, setIsSearchBarOpen] = React.useState(false);
   const muiTheme = useTheme();
   const isMobileDevice = useMediaQuery(muiTheme.breakpoints.down("sm"));
+  const { searchedValue, setSearchedValue } =
+    React.useContext(searchedValueContext);
 
   return (
-    <MainSearchbar isSearchBarOpen={isSearchBarOpen} isMobileDevice={isMobileDevice}>
+    <MainSearchbar
+      isSearchBarOpen={isSearchBarOpen}
+      isMobileDevice={isMobileDevice}
+    >
       <SearchIconContainer
         isSearchBarOpen={isSearchBarOpen}
         onClick={() => {
