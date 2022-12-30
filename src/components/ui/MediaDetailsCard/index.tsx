@@ -11,6 +11,7 @@ import {
   MovieDescription,
   OtherDetailsSubContainer,
   OtherDetailsWrapper,
+  Rating,
   RatingsContainer,
   Title,
 } from "./MediaDetailsCardStyle";
@@ -32,8 +33,10 @@ const MediaDetailsCard: React.FC<MediaDetailsCardProps.IProps> = ({
           <RangeSlider
             value={Number(movieData?.imdbRating)}
             width="111px"
+            height="8px"
             bgColor={theme.colors.aquaBlue}
           />
+          <Rating> {movieData?.imdbRating}/10</Rating>
         </RatingsContainer>
         <OtherDetailsWrapper>
           <OtherDetailsSubContainer>

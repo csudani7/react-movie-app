@@ -90,6 +90,14 @@ export const RatingsContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  gap: 12px;
+`;
+
+export const Rating = styled.div`
+  font-weight: 600;
+  font-size: 16px;
+  font-family: ${theme.typography.openSansFont};
+  color: ${theme.colors.gray100};
 `;
 
 export const OtherDetailsWrapper = styled.div`
