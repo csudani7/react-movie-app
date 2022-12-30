@@ -161,7 +161,6 @@ export const MobileMenuName = styled.div<{
 export const ActiveBorder = styled.div<{
   isActiveTab: boolean;
 }>`
-  // display: ${({ isActiveTab }) => (isActiveTab ? "block" : "block")};
   width: 3px;
   height: 33px;
   background-color: ${({ isActiveTab }) =>

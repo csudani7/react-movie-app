@@ -17,6 +17,7 @@ declare module GlobalTheme {
     aquaBlue: string;
     gray100: string;
     background: string;
+    black100: string;
   }
 
   export interface Effects {

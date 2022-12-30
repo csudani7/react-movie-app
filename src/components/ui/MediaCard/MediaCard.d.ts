@@ -10,6 +10,7 @@ declare namespace IMediaCard {
     imgHeight: string;
     imgWidth: string;
     title: string;
+    onClickHandler: (string) => void;
   }
 }
 

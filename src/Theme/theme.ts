@@ -12,7 +12,7 @@ export const globalColors: GlobalTheme.Colors = {
   white100: "#ffffff",
   aquaBlue: "#00E0FF",
   gray100: "#D4D7DD",
-  
+  black100: "#000000",
 };
 
 export const globalEffects: GlobalTheme.Effects = {
