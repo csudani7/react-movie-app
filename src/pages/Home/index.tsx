@@ -1,8 +1,8 @@
 import React from "react";
+
 import { MediaCard, MediaDetailsCard } from "../../components";
 import { moviesData } from "../../utils";
 import { theme } from "../../Theme/theme";
-import styled from "styled-components";
 import { searchedValueContext } from "../../components/layout";
 import { HomeMainContainer, NoResultTextWrappr, Row } from "./HomeStyle";
 
@@ -38,58 +38,55 @@ const Home = () => {
         </NoResultTextWrappr>
       ) : (
         <>
-          {movieList.length > 0 &&
-            Array.from(
-              { length: Math.ceil(movieList.length / NO_OF_COLUMNS) },
-              (_, i) => (
-                <>
+          {Array.from(
+            { length: Math.ceil(movieList.length / NO_OF_COLUMNS) },
+            (_, i) => (
+              <>
+                {movieList
+                  .slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)
+                  .map((movieData: any, indexTwo) => {
+                    return (
+                      movieData?.Title === showSelectedMovieDetails && (
+                        <MediaDetailsCard
+                          key={indexTwo}
+                          movieData={movieData}
+                          buttonText={["Play Movie", "Watch Trailer"]}
+                          imageWidth="334px"
+                          imageHeight="389px"
+                        />
+                      )
+                    );
+                  })}
+                <Row
+                  length={
+                    movieList.slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)
+                      ?.length
+                  }
+                  NO_OF_COLUMNS={NO_OF_COLUMNS}
+                  CARD_GAP_VALUE={CARD_GAP_VALUE}
+                >
                   {movieList
                     .slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)
-                    .map((movieData: any, indexTwo) => {
-                      return (
-                        movieData?.Title === showSelectedMovieDetails && (
-                          <MediaDetailsCard
-                            key={indexTwo}
-                            movieData={movieData}
-                            buttonText={["Play Movie", "Watch Trailer"]}
-                            imageWidth="334px"
-                            imageHeight="389px"
-                          />
-                        )
-                      );
-                    })}
-                  <Row
-                    length={
-                      movieList.slice(
-                        i * NO_OF_COLUMNS,
-                        (i + 1) * NO_OF_COLUMNS
-                      )?.length
-                    }
-                    NO_OF_COLUMNS={NO_OF_COLUMNS}
-                    CARD_GAP_VALUE={CARD_GAP_VALUE}
-                  >
-                    {movieList
-                      .slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)
-                      .map((data, index) => (
-                        <MediaCard
-                          key={index}
-                          image={data?.Poster}
-                          width="158px"
-                          bgColor={theme.colors.secondary}
-                          fontColor={theme.colors.gray100}
-                          height="278px"
-                          imgHeight="190px"
-                          imgWidth="157px"
-                          title={data?.Title}
-                          onClickHandler={(title) =>
-                            setShowSelectedMovieDetails(title)
-                          }
-                        />
-                      ))}
-                  </Row>
-                </>
-              )
-            )}
+                    .map((data, index) => (
+                      <MediaCard
+                        key={index}
+                        image={data?.Poster}
+                        width="158px"
+                        bgColor={theme.colors.secondary}
+                        fontColor={theme.colors.gray100}
+                        height="278px"
+                        imgHeight="190px"
+                        imgWidth="157px"
+                        title={data?.Title}
+                        onClickHandler={(title) =>
+                          setShowSelectedMovieDetails(title)
+                        }
+                      />
+                    ))}
+                </Row>
+              </>
+            )
+          )}
         </>
       )}
     </HomeMainContainer>

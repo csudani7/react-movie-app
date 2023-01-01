@@ -1,4 +1,8 @@
+//#Global Imports
 import React from "react";
+import { useMediaQuery, useTheme } from "@mui/material";
+
+//#Local Imports
 import { CloseIcon, SearchIcon } from "../../../assets/icons";
 import { theme } from "../../../Theme/theme";
 import {
@@ -7,7 +11,6 @@ import {
   MainSearchbar,
   SearchIconContainer,
 } from "./SearchbarStyle";
-import { useMediaQuery, useTheme } from "@mui/material";
 import { searchedValueContext } from "../../layout";
 
 const SearchBar = () => {

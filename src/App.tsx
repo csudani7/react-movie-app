@@ -1,6 +1,8 @@
-import React from "react";
+//#Global Imports
 import { Route, Routes } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
+
+//#local Imports
 import PrivateRoute from "./hoc/PrivateRoute";
 import { Home } from "./pages";
 

@@ -1,5 +1,8 @@
+//#Global Imports
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+
+//#Local Imports
 import { theme } from "../../../Theme/theme";
 
 export const MainContainer = styled.div<{

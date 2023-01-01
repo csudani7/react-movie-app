@@ -1,6 +1,9 @@
+//#Global Imports
 import React from "react";
 import styled from "styled-components";
 import { Slider } from "@mui/material";
+
+//#Local Imports
 import { IRangeSliderProps } from "./RangeSlider";
 import { theme } from "../../../Theme/theme";
 

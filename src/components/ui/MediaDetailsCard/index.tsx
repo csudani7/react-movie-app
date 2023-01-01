@@ -1,4 +1,7 @@
+//#Global Imports
 import React from "react";
+
+//#Local Imports
 import { theme } from "../../../Theme/theme";
 import Button from "../Button";
 import RangeSlider from "../RangeSlider";

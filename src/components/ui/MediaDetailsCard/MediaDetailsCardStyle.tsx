@@ -1,4 +1,7 @@
+//#Global Imports
 import styled, { keyframes } from "styled-components";
+
+//#Local Imports
 import { theme } from "../../../Theme/theme";
 
 export const verticalSlider = keyframes`

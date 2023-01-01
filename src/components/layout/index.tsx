@@ -1,9 +1,12 @@
+//#Global Imports
 import React, { createContext } from "react";
-import Sidebar from "./Sidebar";
-import IProtectedPageLayout from "./ProtectedPageLayout";
-import Header from "./Header";
-import { LayoutMainContainer, MainSection } from "./ProtectedPageLayoutStyle";
 import { useMediaQuery, useTheme } from "@mui/material";
+
+//#local Imports
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+import IProtectedPageLayout from "./ProtectedPageLayout";
+import { LayoutMainContainer, MainSection } from "./ProtectedPageLayoutStyle";
 
 export const searchedValueContext = createContext(
   {} as IProtectedPageLayout.ISearchContextProps
@@ -27,7 +30,9 @@ const ProtectedPageLayout: React.FunctionComponent<
   }, [isMobileDevice]);
 
   return (
-    <searchedValueContext.Provider value={{ searchedValue, setSearchedValue,isShowSidebar }}>
+    <searchedValueContext.Provider
+      value={{ searchedValue, setSearchedValue, isShowSidebar }}
+    >
       <LayoutMainContainer>
         <Sidebar
           isShowSidebar={isShowSidebar}

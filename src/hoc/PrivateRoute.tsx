@@ -1,6 +1,9 @@
+//#Global Imports
 import React from "react";
-import ProtectedPageLayout from "../components/layout";
 import { Navigate, Outlet } from "react-router-dom";
+
+//#Local Imports
+import ProtectedPageLayout from "../components/layout";
 
 const PrivateRoute = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState<boolean>(true);

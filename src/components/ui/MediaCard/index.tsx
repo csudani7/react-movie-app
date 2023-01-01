@@ -1,6 +1,7 @@
 // Globle imports
 import { CardMedia } from "@mui/material";
 import React from "react";
+
 // Local imports
 import { AddIcon, PlayIcon } from "../../../assets/icons";
 import { IMediaCard } from "./MediaCard";
