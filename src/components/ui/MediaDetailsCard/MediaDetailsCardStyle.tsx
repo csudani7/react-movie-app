@@ -106,7 +106,6 @@ export const OtherDetailsWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 35px;
-  padding: 30px 0px 20px;
 `;
 
 export const OtherDetailsSubContainer = styled.div`
@@ -127,7 +126,7 @@ export const MovieDescription = styled.div`
   font-family: ${theme.typography.openSansFont};
   color: ${theme.colors.white100};
   text-align: start;
-  padding-bottom: 21px;
+  padding: 21px 0px;
 `;
 
 export const ButtonContainer = styled.div`

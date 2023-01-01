@@ -15,8 +15,8 @@ export const MainSection = styled.div<{
   flex-direction: column;
   padding: ${({ isShowSidebar, isMobileDevice }) =>
     isShowSidebar && !isMobileDevice
-      ? "0px 50px 0px 325px"
-      : "0px 20px 0px 90px"};
+      ? "0px 50px 40px 325px"
+      : "0px 20px 40px 90px"};
   transition-duration: 500ms;
   background: ${theme.colors.background};
 `;

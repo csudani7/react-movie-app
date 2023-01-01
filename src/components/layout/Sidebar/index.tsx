@@ -64,14 +64,13 @@ const Sidebar: React.FC<ISidebarProps.IProps> = ({
         <SideBarLineBreaker padding="15px 0px" />
         <Menu isShowSidebar={isShowSidebar}>
           {sidebarMenuList.map((menu, index) => (
-            <>
+            <div key={index}>
               <NavLink
                 onClick={() => {
                   setIsActiveTab("/");
                   setisHideOnMobile(true);
                 }}
                 to="/"
-                key={index}
                 isShowSidebar={isShowSidebar}
               >
                 <MenuIcon isShowSidebar={isShowSidebar}>
@@ -103,7 +102,7 @@ const Sidebar: React.FC<ISidebarProps.IProps> = ({
               {(index === 4 || index === 6) && (
                 <SideBarLineBreaker padding="13px 0px" />
               )}
-            </>
+            </div>
           ))}
         </Menu>
       </div>

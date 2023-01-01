@@ -27,7 +27,7 @@ const ProtectedPageLayout: React.FunctionComponent<
   }, [isMobileDevice]);
 
   return (
-    <searchedValueContext.Provider value={{ searchedValue, setSearchedValue }}>
+    <searchedValueContext.Provider value={{ searchedValue, setSearchedValue,isShowSidebar }}>
       <LayoutMainContainer>
         <Sidebar
           isShowSidebar={isShowSidebar}
