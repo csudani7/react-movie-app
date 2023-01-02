@@ -20,6 +20,7 @@
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "lint-staged": "^13.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
@@ -36,14 +37,21 @@
     "lint": "eslint . --ext ts --ext tsx",
     "lint:fix": "eslint --fix",
     "format": "prettier --write \"./**/*.{ts,tsx,css,md,json}\"",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "./src/**/*.+(ts|tsx)": [
       "eslint --fix",
       "git add"
     ],
-    "./src/**/*.+(css/scss/ts)": "prettier --write"
+    "./src/**/*.+(css/scss/ts/tsx)": "prettier --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -79,6 +87,7 @@
   },
   "devDependencies": {
     "git-cz": "^4.9.0",
+    "husky": "^8.0.0",
     "prettier": "2.8.1"
   }
 }
