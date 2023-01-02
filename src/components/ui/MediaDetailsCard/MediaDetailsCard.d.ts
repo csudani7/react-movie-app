@@ -1,5 +1,3 @@
-import React from "react";
-
 declare namespace MediaDetailsCardProps {
   export type movieData = {
     ComingSoon: true;

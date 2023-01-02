@@ -20,8 +20,7 @@ export const MainSearchbar = styled.div<{
       ? "200px"
       : "0px"};
   cursor: pointer;
-  padding: ${({ isMobileDevice }) =>
-    isMobileDevice ? "0px 10px" : "0px 20px"};
+  padding: ${({ isMobileDevice }) => (isMobileDevice ? "0px 10px" : "0px 20px")};
   height: 44px;
   border-radius: 8px;
   transition: width 500ms cubic-bezier(0.645, 0.045, 0.355, 1);

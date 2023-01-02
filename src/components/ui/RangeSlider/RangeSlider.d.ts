@@ -1,5 +1,3 @@
-import React from "react";
-
 declare namespace IRangeSliderProps {
   export interface IProps {
     value: number;

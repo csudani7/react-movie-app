@@ -7,12 +7,7 @@ import { Slider } from "@mui/material";
 import { IRangeSliderProps } from "./RangeSlider";
 import { theme } from "../../../Theme/theme";
 
-const RangeSlider: React.FC<IRangeSliderProps.IProps> = ({
-  value,
-  width,
-  bgColor,
-  height,
-}) => {
+const RangeSlider: React.FC<IRangeSliderProps.IProps> = ({ value, width, bgColor, height }) => {
   const [sliderValue, setSliderValue] = React.useState(0);
   React.useEffect(() => {
     setTimeout(() => {

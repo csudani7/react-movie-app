@@ -33,10 +33,8 @@ export const HamBerger = styled.div<{
 }>`
   width: 100%;
   display: flex;
-  justify-content: ${({ isShowSidebar }) =>
-    isShowSidebar ? "flex-end" : "center"};
-  margin: ${({ isShowSidebar }) =>
-    isShowSidebar ? "20px 20px 0 0" : "20px 0px"};
+  justify-content: ${({ isShowSidebar }) => (isShowSidebar ? "flex-end" : "center")};
+  margin: ${({ isShowSidebar }) => (isShowSidebar ? "20px 20px 0 0" : "20px 0px")};
 `;
 
 export const HamBergerSubDiv = styled.div<{
@@ -140,8 +138,7 @@ export const MenuName = styled.div<{
   isShowSidebar: boolean;
   index: number;
 }>`
-  color: ${({ isActiveTab }) =>
-    isActiveTab ? theme.colors.aquaBlue : theme.colors.gray100};
+  color: ${({ isActiveTab }) => (isActiveTab ? theme.colors.aquaBlue : theme.colors.gray100)};
   opacity: ${({ isShowSidebar }) => !isShowSidebar && "0"};
   transform: ${({ isShowSidebar }) => !isShowSidebar && "translateX(112px)"};
   overflow: ${({ isShowSidebar }) => !isShowSidebar && "hidden"};
@@ -167,8 +164,7 @@ export const ActiveBorder = styled.div<{
 }>`
   width: 3px;
   height: 33px;
-  background-color: ${({ isActiveTab }) =>
-    isActiveTab && theme.colors.aquaBlue};
+  background-color: ${({ isActiveTab }) => isActiveTab && theme.colors.aquaBlue};
   position: absolute;
   right: 0px;
 `;

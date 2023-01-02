@@ -8,13 +8,11 @@ import Header from "./Header";
 import IProtectedPageLayout from "./ProtectedPageLayout";
 import { LayoutMainContainer, MainSection } from "./ProtectedPageLayoutStyle";
 
-export const searchedValueContext = createContext(
-  {} as IProtectedPageLayout.ISearchContextProps
-);
+export const searchedValueContext = createContext({} as IProtectedPageLayout.ISearchContextProps);
 
-const ProtectedPageLayout: React.FunctionComponent<
-  IProtectedPageLayout.IProps
-> = ({ children }) => {
+const ProtectedPageLayout: React.FunctionComponent<IProtectedPageLayout.IProps> = ({
+  children,
+}) => {
   const [isShowSidebar, setIsShowSidebar] = React.useState(false);
   const [isHideOnMobile, setisHideOnMobile] = React.useState<boolean>(false);
   const [searchedValue, setSearchedValue] = React.useState("");
@@ -30,9 +28,7 @@ const ProtectedPageLayout: React.FunctionComponent<
   }, [isMobileDevice]);
 
   return (
-    <searchedValueContext.Provider
-      value={{ searchedValue, setSearchedValue, isShowSidebar }}
-    >
+    <searchedValueContext.Provider value={{ searchedValue, setSearchedValue, isShowSidebar }}>
       <LayoutMainContainer>
         <Sidebar
           isShowSidebar={isShowSidebar}
@@ -40,10 +36,7 @@ const ProtectedPageLayout: React.FunctionComponent<
           isHideOnMobile={isHideOnMobile}
           setisHideOnMobile={setisHideOnMobile}
         />
-        <MainSection
-          isShowSidebar={isShowSidebar}
-          isMobileDevice={isMobileDevice}
-        >
+        <MainSection isShowSidebar={isShowSidebar} isMobileDevice={isMobileDevice}>
           <Header />
           <div>{children}</div>
         </MainSection>

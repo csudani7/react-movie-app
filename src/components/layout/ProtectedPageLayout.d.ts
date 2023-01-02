@@ -1,3 +1,4 @@
+import React from "react";
 declare namespace IProtectedPageLayout {
   export interface IProps {
     children: React.ReactNode;

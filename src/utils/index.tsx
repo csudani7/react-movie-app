@@ -51,8 +51,7 @@ export const moviesData = [
     Director: "Francis Lawrence",
     Writer:
       "Mark Protosevich (screenplay), Akiva Goldsman (screenplay), Richard Matheson (novel), John William Corrington, Joyce Hooper Corrington",
-    Actors:
-      "Will Smith, Alice Braga, Charlie Tahan, Salli Richardson-Whitfield",
+    Actors: "Will Smith, Alice Braga, Charlie Tahan, Salli Richardson-Whitfield",
     Plot: "Years after a plague kills most of humanity and transforms the rest into monsters, the sole survivor in New York City struggles valiantly to find a cure.",
     Language: "English",
     Country: "USA",
@@ -235,8 +234,7 @@ export const moviesData = [
     Plot: "The world of the Vikings is brought to life through the journey of Ragnar Lothbrok, the first Viking to emerge from Norse legend and onto the pages of history - a man on the edge of myth.",
     Language: "English, Old English, Norse, Old, Latin",
     Country: "Ireland, Canada",
-    Awards:
-      "Nominated for 7 Primetime Emmys. Another 17 wins & 49 nominations.",
+    Awards: "Nominated for 7 Primetime Emmys. Another 17 wins & 49 nominations.",
     Poster:
       "https://ia.media-imdb.com/images/M/MV5BOTEzNzI3MDc0N15BMl5BanBnXkFtZTgwMzk1MzA5NzE@._V1_SX300.jpg",
     Metascore: "N/A",
@@ -389,8 +387,7 @@ export const moviesData = [
     Director: "Scott Derrickson",
     Writer:
       "Scott Derrickson (screenplay), C. Robert Cargill (screenplay), Jon Spaihts (story by), Scott Derrickson (story by), C. Robert Cargill (story by), Steve Ditko (comic book)",
-    Actors:
-      "Rachel McAdams, Benedict Cumberbatch, Mads Mikkelsen, Tilda Swinton",
+    Actors: "Rachel McAdams, Benedict Cumberbatch, Mads Mikkelsen, Tilda Swinton",
     Plot: "After his career is destroyed, a brilliant but arrogant and conceited surgeon gets a new lease on life when a sorcerer takes him under her wing and trains him to defend the world against evil.",
     Language: "English",
     Country: "USA",
@@ -450,10 +447,8 @@ export const moviesData = [
     Runtime: "N/A",
     Genre: "Action, Adventure, Fantasy",
     Director: "Justin Kurzel",
-    Writer:
-      "Bill Collage (screenplay), Adam Cooper (screenplay), Michael Lesslie (screenplay)",
-    Actors:
-      "Michael Fassbender, Michael Kenneth Williams, Marion Cotillard, Jeremy Irons",
+    Writer: "Bill Collage (screenplay), Adam Cooper (screenplay), Michael Lesslie (screenplay)",
+    Actors: "Michael Fassbender, Michael Kenneth Williams, Marion Cotillard, Jeremy Irons",
     Plot: "When Callum Lynch explores the memories of his ancestor Aguilar and gains the skills of a Master Assassin, he discovers he is a descendant of the secret Assassins society.",
     Language: "English",
     Country: "UK, France, USA, Hong Kong",

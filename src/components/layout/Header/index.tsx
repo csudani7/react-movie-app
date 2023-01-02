@@ -3,7 +3,6 @@ import SearchBar from "../../ui/SearchBar";
 import { HeaderIconsDiv, HeaderMainContainer } from "./HeaderStyle";
 
 const Header = () => {
-  
   return (
     <HeaderMainContainer>
       <SearchBar />

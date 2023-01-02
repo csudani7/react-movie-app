@@ -36,10 +36,7 @@ const Sidebar: React.FC<ISidebarProps.IProps> = ({
   const [isActiveTab, setIsActiveTab] = React.useState(location?.pathname);
 
   return (
-    <MainContainer
-      isShowSidebar={isShowSidebar}
-      isHideOnMobile={isHideOnMobile}
-    >
+    <MainContainer isShowSidebar={isShowSidebar} isHideOnMobile={isHideOnMobile}>
       <div>
         {/* HamBerger Section */}
         <HamBerger isShowSidebar={isShowSidebar}>
@@ -56,9 +53,7 @@ const Sidebar: React.FC<ISidebarProps.IProps> = ({
         <ProfileImageContainer isShowSidebar={isShowSidebar}>
           <ProfileImage
             isShowSidebar={isShowSidebar}
-            onClick={() => (
-              setisHideOnMobile(true), setIsActiveTab("/"), navigate("/")
-            )}
+            onClick={() => (setisHideOnMobile(true), setIsActiveTab("/"), navigate("/"))}
           >
             <UserImage />
           </ProfileImage>
@@ -80,9 +75,7 @@ const Sidebar: React.FC<ISidebarProps.IProps> = ({
                   {
                     <menu.icon
                       fillColor={
-                        isActiveTab === menu?.link
-                          ? theme.colors.aquaBlue
-                          : theme.colors.gray100
+                        isActiveTab === menu?.link ? theme.colors.aquaBlue : theme.colors.gray100
                       }
                     />
                   }
@@ -95,16 +88,11 @@ const Sidebar: React.FC<ISidebarProps.IProps> = ({
                   {menu.name}
                 </MenuName>
                 <ActiveBorder isActiveTab={isActiveTab === menu.link} />
-                <MobileMenuName
-                  className="mobileMenuName"
-                  isShowSidebar={isShowSidebar}
-                >
+                <MobileMenuName className="mobileMenuName" isShowSidebar={isShowSidebar}>
                   {menu.name}
                 </MobileMenuName>
               </NavLink>
-              {(index === 4 || index === 6) && (
-                <SideBarLineBreaker padding="13px 0px" />
-              )}
+              {(index === 4 || index === 6) && <SideBarLineBreaker padding="13px 0px" />}
             </div>
           ))}
         </Menu>

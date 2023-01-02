@@ -1,6 +1,4 @@
-import { Style } from "util";
-
-declare module GlobalTheme {
+declare namespace GlobalTheme {
   type StyleObject = { [key: string]: string | number } | string;
 
   export interface DefaultTheme {

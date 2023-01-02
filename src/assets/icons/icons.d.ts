@@ -1,10 +1,9 @@
 declare namespace IIcons {
-    export interface IconProps {
-      width?: string;
-      height?: string;
-      fillColor?: string;
-    }
+  export interface IconProps {
+    width?: string;
+    height?: string;
+    fillColor?: string;
   }
-  
-  export { IIcons };
-  
+}
+
+export { IIcons };

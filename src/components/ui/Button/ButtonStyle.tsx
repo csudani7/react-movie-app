@@ -20,8 +20,7 @@ export const ButtonMainContainer = styled.button<{
   font-size: ${({ fontSize }) => fontSize};
   color: ${({ fontColor }) => fontColor};
   font-family: ${({ fontFamily }) => fontFamily};
-  border: ${({ borderWidth, borderColor }) =>
-    `${borderWidth} solid ${borderColor}`};
+  border: ${({ borderWidth, borderColor }) => `${borderWidth} solid ${borderColor}`};
   border-radius: ${({ borderRadius }) => borderRadius};
   padding: 10px 16px;
 `;

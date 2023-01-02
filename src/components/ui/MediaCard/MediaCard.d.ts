@@ -1,5 +1,3 @@
-import React from "react";
-
 declare namespace IMediaCard {
   export interface IProps {
     image: string;
