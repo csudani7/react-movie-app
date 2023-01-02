@@ -45,7 +45,7 @@ const Home = () => {
         <NoResultTextWrappr>No results found for your search.</NoResultTextWrappr>
       ) : (
         <>
-          {Array?.from({ length: Math.ceil(movieList?.length / NO_OF_COLUMNS) }, (_, i) => (
+          {[...Array(Math.ceil(movieList?.length / NO_OF_COLUMNS))].map((_, i) => (
             <>
               {movieList
                 ?.slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)
