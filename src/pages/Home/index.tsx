@@ -15,8 +15,13 @@ const Home = () => {
   const SIDE_MARGIN = isShowSidebar ? 375 : 110;
   const CARD_GAP_VALUE = 26;
   const USABLE_WIDDTH = WINDOW_INNER_WIDTH - SIDE_MARGIN + CARD_GAP_VALUE;
-  const MEDIA_CARD_WIDTH_WITH_GAP = 178 + CARD_GAP_VALUE;
+  const MEDIA_CARD_WITH = 178;
+  const MEDIA_CARD_WIDTH_WITH_GAP = MEDIA_CARD_WITH + CARD_GAP_VALUE;
   const NO_OF_COLUMNS = Math.trunc(USABLE_WIDDTH / MEDIA_CARD_WIDTH_WITH_GAP);
+
+  const cardGapValueForNotFullFilledRow = Math.trunc(
+    (USABLE_WIDDTH - NO_OF_COLUMNS * MEDIA_CARD_WITH) / NO_OF_COLUMNS,
+  );
 
   React.useEffect(() => {
     let tempData = moviesData;
@@ -54,7 +59,7 @@ const Home = () => {
               <Row
                 length={movieList.slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)?.length}
                 NO_OF_COLUMNS={NO_OF_COLUMNS}
-                CARD_GAP_VALUE={CARD_GAP_VALUE}
+                CARD_GAP_VALUE={cardGapValueForNotFullFilledRow}
               >
                 {movieList.slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS).map((data, index) => (
                   <MediaCard
