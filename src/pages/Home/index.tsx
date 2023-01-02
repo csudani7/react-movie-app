@@ -1,5 +1,8 @@
+//#Global Imports
 import React from "react";
+import { useMediaQuery, useTheme } from "@mui/material";
 
+//#Local Imports
 import { MediaCard, MediaDetailsCard } from "../../components";
 import { moviesData } from "../../utils";
 import { theme } from "../../Theme/theme";
@@ -8,19 +11,22 @@ import { HomeMainContainer, NoResultTextWrappr, Row } from "./HomeStyle";
 
 const Home = () => {
   const [movieList, setMovieList] = React.useState(moviesData);
-  const { searchedValue, isShowSidebar } = React.useContext(searchedValueContext);
+  const { searchedValue, isshowsidebar } = React.useContext(searchedValueContext);
   const [showSelectedMovieDetails, setShowSelectedMovieDetails] = React.useState("");
+  const muiTheme = useTheme();
+  const isMobileDevice = useMediaQuery(muiTheme.breakpoints.down("sm"));
 
   const WINDOW_INNER_WIDTH = window.innerWidth;
-  const SIDE_MARGIN = isShowSidebar ? 375 : 110;
-  const CARD_GAP_VALUE = 26;
+  const SIDE_MARGIN = isshowsidebar && !isMobileDevice ? 375 : 110;
+  const CARD_GAP_VALUE = isMobileDevice ? 0 : 26;
   const USABLE_WIDDTH = WINDOW_INNER_WIDTH - SIDE_MARGIN + CARD_GAP_VALUE;
   const MEDIA_CARD_WITH = 178;
   const MEDIA_CARD_WIDTH_WITH_GAP = MEDIA_CARD_WITH + CARD_GAP_VALUE;
   const NO_OF_COLUMNS = Math.trunc(USABLE_WIDDTH / MEDIA_CARD_WIDTH_WITH_GAP);
+  const USABEL_WIDTH_FOR_NOT_FULLY_ROW = isshowsidebar ? USABLE_WIDDTH + 5 : USABLE_WIDDTH - 10;
 
   const cardGapValueForNotFullFilledRow = Math.trunc(
-    (USABLE_WIDDTH - NO_OF_COLUMNS * MEDIA_CARD_WITH) / NO_OF_COLUMNS,
+    (USABEL_WIDTH_FOR_NOT_FULLY_ROW - NO_OF_COLUMNS * MEDIA_CARD_WITH) / NO_OF_COLUMNS,
   );
 
   React.useEffect(() => {
@@ -34,16 +40,16 @@ const Home = () => {
   }, [searchedValue]);
 
   return (
-    <HomeMainContainer length={movieList.length}>
-      {movieList.length === 0 ? (
+    <HomeMainContainer length={movieList?.length}>
+      {movieList?.length === 0 ? (
         <NoResultTextWrappr>No results found for your search.</NoResultTextWrappr>
       ) : (
         <>
-          {Array.from({ length: Math.ceil(movieList.length / NO_OF_COLUMNS) }, (_, i) => (
+          {Array?.from({ length: Math.ceil(movieList?.length / NO_OF_COLUMNS) }, (_, i) => (
             <>
               {movieList
-                .slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)
-                .map((movieData: any, indexTwo) => {
+                ?.slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)
+                ?.map((movieData: any, indexTwo) => {
                   return (
                     movieData?.Title === showSelectedMovieDetails && (
                       <MediaDetailsCard
@@ -57,24 +63,26 @@ const Home = () => {
                   );
                 })}
               <Row
-                length={movieList.slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)?.length}
+                length={movieList?.slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)?.length}
                 NO_OF_COLUMNS={NO_OF_COLUMNS}
                 CARD_GAP_VALUE={cardGapValueForNotFullFilledRow}
               >
-                {movieList.slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS).map((data, index) => (
-                  <MediaCard
-                    key={index}
-                    image={data?.Poster}
-                    width="158px"
-                    bgColor={theme.colors.secondary}
-                    fontColor={theme.colors.gray100}
-                    height="278px"
-                    imgHeight="190px"
-                    imgWidth="157px"
-                    title={data?.Title}
-                    onClickHandler={(title) => setShowSelectedMovieDetails(title)}
-                  />
-                ))}
+                {movieList
+                  ?.slice(i * NO_OF_COLUMNS, (i + 1) * NO_OF_COLUMNS)
+                  ?.map((data, index) => (
+                    <MediaCard
+                      key={index}
+                      image={data?.Poster}
+                      width="158px"
+                      bgColor={theme.colors.secondary}
+                      fontColor={theme.colors.gray100}
+                      height="278px"
+                      imgHeight="190px"
+                      imgWidth="157px"
+                      title={data?.Title}
+                      onClickHandler={(title) => setShowSelectedMovieDetails(title)}
+                    />
+                  ))}
               </Row>
             </>
           ))}
