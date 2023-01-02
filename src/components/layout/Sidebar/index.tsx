@@ -25,7 +25,7 @@ import {
 } from "./SidebarStyle";
 
 const Sidebar: React.FC<ISidebarProps.IProps> = ({
-  isShowSidebar,
+  isshowsidebar,
   setIsShowSidebar,
   setisHideOnMobile,
   isHideOnMobile,
@@ -36,13 +36,13 @@ const Sidebar: React.FC<ISidebarProps.IProps> = ({
   const [isActiveTab, setIsActiveTab] = React.useState(location?.pathname);
 
   return (
-    <MainContainer isShowSidebar={isShowSidebar} isHideOnMobile={isHideOnMobile}>
+    <MainContainer isshowsidebar={isshowsidebar} isHideOnMobile={isHideOnMobile}>
       <div>
         {/* HamBerger Section */}
-        <HamBerger isShowSidebar={isShowSidebar}>
+        <HamBerger isshowsidebar={isshowsidebar}>
           <HamBergerSubDiv
-            onClick={() => setIsShowSidebar(!isShowSidebar)}
-            isShowSidebar={isShowSidebar}
+            onClick={() => setIsShowSidebar(!isshowsidebar)}
+            isshowsidebar={isshowsidebar}
           >
             <div />
             <div />
@@ -50,17 +50,17 @@ const Sidebar: React.FC<ISidebarProps.IProps> = ({
           </HamBergerSubDiv>
         </HamBerger>
         {/* User Profile Image Section */}
-        <ProfileImageContainer isShowSidebar={isShowSidebar}>
+        <ProfileImageContainer isshowsidebar={isshowsidebar}>
           <ProfileImage
-            isShowSidebar={isShowSidebar}
+            isshowsidebar={isshowsidebar}
             onClick={() => (setisHideOnMobile(true), setIsActiveTab("/"), navigate("/"))}
           >
             <UserImage />
           </ProfileImage>
-          <UserName isShowSidebar={isShowSidebar}>Eric Hoffman</UserName>
+          <UserName isshowsidebar={isshowsidebar}>Eric Hoffman</UserName>
         </ProfileImageContainer>
         <SideBarLineBreaker padding="15px 0px" />
-        <Menu isShowSidebar={isShowSidebar}>
+        <Menu isshowsidebar={isshowsidebar}>
           {sidebarMenuList.map((menu, index) => (
             <div key={index}>
               <NavLink
@@ -69,9 +69,9 @@ const Sidebar: React.FC<ISidebarProps.IProps> = ({
                   setisHideOnMobile(true);
                 }}
                 to="/"
-                isShowSidebar={isShowSidebar}
+                isshowsidebar={isshowsidebar}
               >
-                <MenuIcon isShowSidebar={isShowSidebar}>
+                <MenuIcon isshowsidebar={isshowsidebar}>
                   {
                     <menu.icon
                       fillColor={
@@ -83,12 +83,12 @@ const Sidebar: React.FC<ISidebarProps.IProps> = ({
                 <MenuName
                   index={index}
                   isActiveTab={isActiveTab === menu.link}
-                  isShowSidebar={isShowSidebar}
+                  isshowsidebar={isshowsidebar}
                 >
                   {menu.name}
                 </MenuName>
                 <ActiveBorder isActiveTab={isActiveTab === menu.link} />
-                <MobileMenuName className="mobileMenuName" isShowSidebar={isShowSidebar}>
+                <MobileMenuName className="mobileMenuName" isshowsidebar={isshowsidebar}>
                   {menu.name}
                 </MobileMenuName>
               </NavLink>

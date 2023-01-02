@@ -13,30 +13,30 @@ export const searchedValueContext = createContext({} as IProtectedPageLayout.ISe
 const ProtectedPageLayout: React.FunctionComponent<IProtectedPageLayout.IProps> = ({
   children,
 }) => {
-  const [isShowSidebar, setIsShowSidebar] = React.useState(false);
+  const [isshowsidebar, setIsShowSidebar] = React.useState<boolean>(false);
   const [isHideOnMobile, setisHideOnMobile] = React.useState<boolean>(false);
-  const [searchedValue, setSearchedValue] = React.useState("");
+  const [searchedValue, setSearchedValue] = React.useState<string>("");
   const theme = useTheme();
   const isMobileDevice = useMediaQuery(theme.breakpoints.down("sm"));
 
   React.useEffect(() => {
     if (isMobileDevice) {
-      isShowSidebar && setIsShowSidebar(false);
+      isshowsidebar && setIsShowSidebar(false);
     } else {
-      !isShowSidebar && setIsShowSidebar(true);
+      !isshowsidebar && setIsShowSidebar(true);
     }
   }, [isMobileDevice]);
 
   return (
-    <searchedValueContext.Provider value={{ searchedValue, setSearchedValue, isShowSidebar }}>
+    <searchedValueContext.Provider value={{ searchedValue, setSearchedValue, isshowsidebar }}>
       <LayoutMainContainer>
         <Sidebar
-          isShowSidebar={isShowSidebar}
+          isshowsidebar={isshowsidebar}
           setIsShowSidebar={setIsShowSidebar}
           isHideOnMobile={isHideOnMobile}
           setisHideOnMobile={setisHideOnMobile}
         />
-        <MainSection isShowSidebar={isShowSidebar} isMobileDevice={isMobileDevice}>
+        <MainSection isshowsidebar={isshowsidebar} isMobileDevice={isMobileDevice}>
           <Header />
           <div>{children}</div>
         </MainSection>

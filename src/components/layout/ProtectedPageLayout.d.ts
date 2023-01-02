@@ -7,7 +7,7 @@ declare namespace IProtectedPageLayout {
   export interface ISearchContextProps {
     searchedValue: string;
     setSearchedValue: React.Dispatch<React.SetStateAction<string>>;
-    isShowSidebar: boolean;
+    isshowsidebar: boolean;
   }
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 
 declare namespace ISidebarProps {
   export interface IProps {
-    isShowSidebar: boolean;
+    isshowsidebar: boolean;
     isHideOnMobile: boolean;
     setIsShowSidebar: React.Dispatch<React.SetStateAction<boolean>>;
     setisHideOnMobile: React.Dispatch<React.SetStateAction<boolean>>;
